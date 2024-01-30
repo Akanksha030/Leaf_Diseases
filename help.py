@@ -159,12 +159,12 @@ else:
         x = random.randint(98,99)+ random.randint(0,99)*0.01
         st.sidebar.error("Accuracy : " + str(x) + " %")
 	class_names = [
-        'Apple__Apple_scab', 'Apple__Black_rot', 'Apple__Cedar_apple_rust', 'Apple__healthy',
-        'Corn_(maize)__Common_rust_', 'Corn_(maize)___Northern_Leaf_Blight', 'Corn_(maize)___healthy',
-        'Grape___Black_rot', 'Grape___Leaf_blight_(Isariopsis_Leaf_Spot)', 'Grape___healthy',
-        'Potato___Early_blight', 'Potato___Late_blight', 'Potato___healthy',
-        'Strawberry__Leaf_scorch', 'Strawberry__healthy',
-        'Tomato__Early_blight', 'Tomato__Late_blight', 'Tomato__Tomato_mosaic_virus', 'Tomato__healthy']
+	        'Apple__Apple_scab', 'Apple__Black_rot', 'Apple__Cedar_apple_rust', 'Apple__healthy',
+	        'Corn_(maize)__Common_rust_', 'Corn_(maize)___Northern_Leaf_Blight', 'Corn_(maize)___healthy',
+	        'Grape___Black_rot', 'Grape___Leaf_blight_(Isariopsis_Leaf_Spot)', 'Grape___healthy',
+	        'Potato___Early_blight', 'Potato___Late_blight', 'Potato___healthy',
+	        'Strawberry__Leaf_scorch', 'Strawberry__healthy',
+	        'Tomato__Early_blight', 'Tomato__Late_blight', 'Tomato__Tomato_mosaic_virus', 'Tomato__healthy']
 	    
 	detected_class = prediction_cls(predictions)
 	if detected_class in ['Tomato__healthy', 'Strawberry__healthy', 'Potato__healthy', 'Grape__healthy', 'Corn(maize)__healthy', 'Apple__healthy']:
@@ -182,12 +182,12 @@ else:
         x = random.randint(98,99)+ random.randint(0,99)*0.01
         st.sidebar.error("Accuracy : " + str(x) + " %")
 	class_names = [
-        'Apple__Apple_scab', 'Apple__Black_rot', 'Apple__Cedar_apple_rust', 'Apple__healthy',
-        'Corn_(maize)__Common_rust_', 'Corn_(maize)___Northern_Leaf_Blight', 'Corn_(maize)___healthy',
-        'Grape___Black_rot', 'Grape___Leaf_blight_(Isariopsis_Leaf_Spot)', 'Grape___healthy',
-        'Potato___Early_blight', 'Potato___Late_blight', 'Potato___healthy',
-        'Strawberry__Leaf_scorch', 'Strawberry__healthy',
-        'Tomato__Early_blight', 'Tomato__Late_blight', 'Tomato__Tomato_mosaic_virus', 'Tomato__healthy']
+	        'Apple__Apple_scab', 'Apple__Black_rot', 'Apple__Cedar_apple_rust', 'Apple__healthy',
+	        'Corn_(maize)__Common_rust_', 'Corn_(maize)___Northern_Leaf_Blight', 'Corn_(maize)___healthy',
+	        'Grape___Black_rot', 'Grape___Leaf_blight_(Isariopsis_Leaf_Spot)', 'Grape___healthy',
+	        'Potato___Early_blight', 'Potato___Late_blight', 'Potato___healthy',
+	        'Strawberry__Leaf_scorch', 'Strawberry__healthy',
+	        'Tomato__Early_blight', 'Tomato__Late_blight', 'Tomato__Tomato_mosaic_virus', 'Tomato__healthy']
 	    
 	detected_class = prediction_cls(predictions)
 	if detected_class in ['Tomato__healthy', 'Strawberry__healthy', 'Potato__healthy', 'Grape__healthy', 'Corn(maize)__healthy', 'Apple__healthy']:
