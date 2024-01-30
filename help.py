@@ -166,8 +166,9 @@ else:
         'Potato___Early_blight', 'Potato___Late_blight', 'Potato___healthy',
         'Strawberry__Leaf_scorch', 'Strawberry__healthy',
         'Tomato__Early_blight', 'Tomato__Late_blight', 'Tomato__Tomato_mosaic_virus', 'Tomato__healthy']
-	    
+
 	detected_class = prediction_cls(predictions)
+
 	if detected_class in ['Tomato__healthy', 'Strawberry__healthy', 'Potato__healthy', 'Grape__healthy', 'Corn(maize)__healthy', 'Apple__healthy']:
 	    st.balloons()
 	    st.success(f"Congratulations! You've detected a healthy {class_names[detected_class]} leaf.")
@@ -190,8 +191,10 @@ else:
         'Potato___Early_blight', 'Potato___Late_blight', 'Potato___healthy',
         'Strawberry__Leaf_scorch', 'Strawberry__healthy',
         'Tomato__Early_blight', 'Tomato__Late_blight', 'Tomato__Tomato_mosaic_virus', 'Tomato__healthy']
-	    
+
 	detected_class = prediction_cls(predictions)
+	    
+	
 	if detected_class in ['Tomato__healthy', 'Strawberry__healthy', 'Potato__healthy', 'Grape__healthy', 'Corn(maize)__healthy', 'Apple__healthy']:
 	    st.balloons()
 	    st.success(f"Congratulations! You've detected a healthy {class_names[detected_class]} leaf.")
