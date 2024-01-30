@@ -173,11 +173,14 @@ else:
         detected_disease = class_names[np.argmax(predictions)]
         
         if 'healthy' in detected_disease.lower():
+            st.balloons()
             st.write("No disease detected. Your plant looks healthy!")
+            st.image("https://media.giphy.com/media/3oKIPm2cP2GIVN3RAk/giphy.gif", use_column_width=True)
         else:
             st.write(f"Remedy for {detected_disease}")
-            
+            st.image("https://emojicombos.com/wp-content/uploads/2020/04/sad-24.png", use_column_width=True)
 
+        
     else:
         image = Image.open(file)
         st.image(image, use_column_width=True)
@@ -198,9 +201,10 @@ else:
         detected_disease = class_names[np.argmax(predictions)]
 
         if 'healthy' in detected_disease.lower():
+            st.balloons()
             st.write("No disease detected. Your plant looks healthy!")
+            st.image("https://media.giphy.com/media/3oKIPm2cP2GIVN3RAk/giphy.gif", use_column_width=True)
         else:
             st.write(f"Remedy for {detected_disease}")
-
-
+            st.image("https://emojicombos.com/wp-content/uploads/2020/04/sad-24.png", use_column_width=True)
 
