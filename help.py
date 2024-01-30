@@ -360,28 +360,28 @@ else:
 
         elif class_names[np.argmax(predictions)] == 'Corn_(maize)__Common_rust_':
             st.sidebar.warning(string)
-            st.markdown("## Remedy")
+            st.write('Potato__Late_blight')
             st.info("Corn Common Rust")
 
 
         elif class_names[np.argmax(predictions)] == 'Corn_(maize)__Northern_Leaf_Blight':
             st.sidebar.warning(string)
-            st.markdown("## Remedy")
+            st.write('Potato__Late_blight')
             st.info("Corn Northern Leaf Blight")
 
         elif class_names[np.argmax(predictions)] == 'Apple__Black_rot':
             st.sidebar.warning(string)
-            st.markdown("## Remedy")
+            st.write('Potato__Late_blight')
             st.info("Apple Black Rot")
 
         elif class_names[np.argmax(predictions)] == 'Apple__Apple_scab':
             st.sidebar.warning(string)
-            st.markdown("## Remedy")
+            st.write('Potato__Late_blight')
             st.info("Apple Scab")
 
         elif class_names[np.argmax(predictions)] == 'Apple__Cedar_apple_rust':
             st.sidebar.warning(string)
-            st.markdown("## Remedy")
+            st.write('Potato__Late_blight')
             st.info("Apple Cedar Apple Rust")
 
 
