@@ -286,8 +286,10 @@ else:
         'Strawberry__Leaf_scorch', 'Strawberry__healthy',
         'Tomato__Early_blight', 'Tomato__Late_blight', 'Tomato__Tomato_mosaic_virus', 'Tomato__healthy']
 
-        string = "Detected Disease : " + class_names[np.argmax(predictions)]
-	detected_disease = class_names[np.argmax(predictions)]
+	
+
+        detected_disease = class_names[np.argmax(predictions)]
+	
 	
 	if 'healthy' in detected_disease.lower():
 		st.write("No disease detected. Your plant looks healthy!")
