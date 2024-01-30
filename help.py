@@ -178,7 +178,7 @@ else:
             st.balloons()
             st.success("No disease detected. Your plant looks healthy!")
         else:
-            st.info(f"Remedy for {detected_disease}")
+            st.info(f"Look into Remedies for {detected_disease}")
             st.sidebar.warning(f"Detected Disease: {class_names[np.argmax(predictions)]}")
 
         
@@ -205,6 +205,6 @@ else:
             st.balloons()
             st.success("No disease detected. Your plant looks healthy!")
         else:
-            st.info(f"Remedy for {detected_disease}")
+            st.info(f"Look into Remedies for {detected_disease}")
             st.sidebar.warning(f"Detected Disease: {class_names[np.argmax(predictions)]}")
             
