@@ -218,7 +218,7 @@ else:
 	    st.info("Tomato Early Blight")
 	
 	elif class_names[np.argmax(predictions)] == 'Strawberry__Leaf_scorch':
-	    st.sidebar.warning(string)
+	    #st.sidebar.warning(string)
 	    st.markdown("## Remedy")
 	    st.info("Strawberry Leaf Scorch")
 	
