@@ -287,6 +287,13 @@ else:
         'Tomato__Early_blight', 'Tomato__Late_blight', 'Tomato__Tomato_mosaic_virus', 'Tomato__healthy']
 
         string = "Detected Disease : " + class_names[np.argmax(predictions)]
+        detected_disease = class_names[np.argmax(predictions)]
+        
+        if 'healthy' in detected_disease.lower():
+            st.write("No disease detected. Your plant looks healthy!")
+        else:
+            st.write(f"Remedy for {detected_disease}")
+
         if class_names[np.argmax(predictions)] == 'Tomato__healthy':
             st.balloons()
             #st.sidebar.success(string)
