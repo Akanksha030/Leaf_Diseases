@@ -42,6 +42,9 @@ hide_streamlit_style = """
 """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 
+st.write("### Heading")
+st.write("This is a *formatted* text with **bold** and _italic_.")
+
 def prediction_cls(prediction): 
     for key, clss in class_names.items(): 
         if np.argmax(prediction)==clss: 
@@ -174,11 +177,10 @@ else:
         
         if 'healthy' in detected_disease.lower():
             st.balloons()
-            st.write("No disease detected. Your plant looks healthy!")
-            st.image("https://media.giphy.com/media/3oKIPm2cP2GIVN3RAk/giphy.gif", use_column_width=True)
+            st.success("No disease detected. Your plant looks healthy!")
         else:
-            st.write(f"Remedy for {detected_disease}")
-            st.image("https://emojicombos.com/wp-content/uploads/2020/04/sad-24.png", use_column_width=True)
+            st.info(f"Remedy for {detected_disease}")
+            st.sidebar.warning(f"Detected Disease: {class_names[np.argmax(predictions)]}")
 
         
     else:
@@ -202,9 +204,8 @@ else:
 
         if 'healthy' in detected_disease.lower():
             st.balloons()
-            st.write("No disease detected. Your plant looks healthy!")
-            st.image("https://media.giphy.com/media/3oKIPm2cP2GIVN3RAk/giphy.gif", use_column_width=True)
+            st.success("No disease detected. Your plant looks healthy!")
         else:
-            st.write(f"Remedy for {detected_disease}")
-            st.image("https://emojicombos.com/wp-content/uploads/2020/04/sad-24.png", use_column_width=True)
-
+            st.info(f"Remedy for {detected_disease}")
+            st.sidebar.warning(f"Detected Disease: {class_names[np.argmax(predictions)]}")
+            
