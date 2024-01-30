@@ -267,7 +267,8 @@ else:
         'Tomato__Early_blight', 'Tomato__Late_blight', 'Tomato__Tomato_mosaic_virus', 'Tomato__healthy']
 
         string = "Detected Disease : " + class_names[np.argmax(predictions)]
-	detected_class = class_names[np.argmax(predictions)]
+    detected_class = class_names[np.argmax(predictions)]
+	
 	
         if class_names[np.argmax(predictions)] == 'Tomato__healthy':
             st.balloons()
