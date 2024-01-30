@@ -152,7 +152,7 @@ def import_and_predict(image_data, model):
 if file is None:
 	    st.write("Proceed !!!")
 else:
-	image = Image.open(file_path)
+	image = Image.open(file)
 	st.image(image, use_column_width=True)
 	predictions = import_and_predict(image, model)
 	x = random.randint(98,99)+ random.randint(0,99)*0.01
