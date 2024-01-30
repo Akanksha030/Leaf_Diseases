@@ -198,8 +198,7 @@ else:
     ######################################################----/DISEASED LEAVES/-----##############################################
 
         elif class_names[np.argmax(predictions)] == 'Tomato__Tomato_mosaic_virus':
-            st.markdown("## Remedy")
-	    st.sidebar.text("Detected Disease: Tomato Mosaic Virus")
+            st.sidebar.text("Detected Disease: Tomato Mosaic Virus")
             st.info("Tomato Mosaic Virus")
 
         elif class_names[np.argmax(predictions)] == 'Tomato__Late_blight':
@@ -211,8 +210,7 @@ else:
             st.info("Tomato Early Blight")
 
         elif class_names[np.argmax(predictions)] == 'Strawberry__Leaf_scorch':
-            st.markdown("## Remedy")
-	    st.sidebar.text("Detected Disease: Tomato Mosaic Virus")
+            st.sidebar.text("Detected Disease: Strawberry__Leaf_scorch")
             st.info("Strawberry Leaf Scorch")
 
         elif class_names[np.argmax(predictions)] == 'Potato__Late_blight':
@@ -224,7 +222,7 @@ else:
             st.info("Potato Early Blight")
 
         elif class_names[np.argmax(predictions)] == 'Grape__Leaf_blight_(Isariopsis_Leaf_Spot)':
-            st.markdown("## Remedy")
+            st.sidebar.text("Detected Disease: Grape__Leaf_blight_(Isariopsis_Leaf_Spot)")
             st.info("Grape Leaf Blight_(Isariopsis_Leaf_Spot)")
 
         elif class_names[np.argmax(predictions)] == 'Grape__Black_rot':
@@ -232,8 +230,7 @@ else:
             st.info("Grape Black Rot")
 
         elif class_names[np.argmax(predictions)] == 'Corn_(maize)__Common_rust_':
-            st.markdown("## Remedy")
-	    st.sidebar.text("Detected Disease: Tomato Mosaic Virus")
+            st.sidebar.text("Detected Disease: Strawberry__Leaf_scorch")
             st.info("Corn Common Rust")
 
 
@@ -296,7 +293,7 @@ else:
             st.success("Congratulations! You've detected a healthy Apple leaf.")
     ######################################################----/DISEASED LEAVES/-----##############################################
         elif class_names[np.argmax(predictions)] == 'Tomato__Tomato_mosaic_virus':
-            st.markdown("## Remedy")
+            st.sidebar.text("Detected Disease: Tomato Mosaic Virus")
             st.info("Tomato Mosaic Virus")
 
         elif class_names[np.argmax(predictions)] == 'Tomato__Late_blight':
