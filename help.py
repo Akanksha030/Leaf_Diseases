@@ -210,7 +210,7 @@ else:
             st.info("Tomato Early Blight")
 
         elif class_names[np.argmax(predictions)] == 'Strawberry__Leaf_scorch':
-            st.sidebar.text("Detected Disease: Strawberry__Leaf_scorch")
+            st.sidebar.text(f"Detected Disease: {detected_class}")
             st.info("Strawberry Leaf Scorch")
 
         elif class_names[np.argmax(predictions)] == 'Potato__Late_blight':
