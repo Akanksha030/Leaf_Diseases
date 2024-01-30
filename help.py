@@ -335,7 +335,7 @@ else:
 
         elif class_names[np.argmax(predictions)] == 'Strawberry__Leaf_scorch':
             st.sidebar.warning(string)
-            st.markdown("## Remedy")
+            st.write('Potato__Late_blight')
             st.info("Strawberry Leaf Scorch")
 
         elif class_names[np.argmax(predictions)] == 'Potato__Late_blight':
