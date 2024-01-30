@@ -43,10 +43,10 @@ hide_streamlit_style = """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 
 def prediction_cls(prediction): 
-    for key, clss in class_names.items(): 
-        if np.argmax(prediction)==clss: 
+    for idx, clss in class_names.items(): 
+        if np.argmax(prediction)==idx: 
             
-            return key
+            return idx
 
 def load_model():
     model=tf.keras.models.load_model('trial3.h5')
