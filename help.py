@@ -154,7 +154,7 @@ if file is None:
 else:
 	image = Image.open(file_path)
 	st.image(image, use_column_width=True)
-	predictions = import_and_predictC(image, model)
+	predictions = import_and_predict(image, model)
 	x = random.randint(98,99)+ random.randint(0,99)*0.01
 	st.sidebar.error("Accuracy : " + str(x) + " %")
 	
