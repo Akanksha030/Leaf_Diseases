@@ -1,0 +1,6 @@
+streamlit==1.29.0
+install tensorflow==2.15.0
+install Pillow==10.0.0
+install numpy==1.25.2
+install opencv-python==4.7.0
+install requests==2.25.0
