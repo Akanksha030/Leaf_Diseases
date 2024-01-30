@@ -42,8 +42,7 @@ hide_streamlit_style = """
 """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 
-st.write("### Heading")
-st.write("This is a *formatted* text with **bold** and _italic_.")
+
 
 def prediction_cls(prediction): 
     for key, clss in class_names.items(): 
@@ -125,17 +124,17 @@ with st.sidebar:
 #    else:
 #        st.warning("Please capture an image from the laptop webcam first.")
 
-capture_option = st.sidebar.selectbox("Select Image Capture Option", ["Webcam", "URL"])
-file_path = None
-if capture_option == "Webcam":
-    if st.sidebar.button("Capture Image from Webcam"):
-        file_path = capture_image_from_webcam()
-        image = Image.open(file_path)
-elif capture_option == "URL":
-    url = st.text_input("Enter Image URL:")
-    if st.sidebar.button("Capture Image from URL") and url:
-        file_path = capture_image_from_streaming_url(url)
-        image = Image.open(file_path)
+#capture_option = st.sidebar.selectbox("Select Image Capture Option", ["Webcam", "URL"])
+#file_path = None
+#if capture_option == "Webcam":
+#   if st.sidebar.button("Capture Image from Webcam"):
+#        file_path = capture_image_from_webcam()
+#        image = Image.open(file_path)
+#elif capture_option == "URL":
+#    url = st.text_input("Enter Image URL:")
+#    if st.sidebar.button("Capture Image from URL") and url:
+#        file_path = capture_image_from_streaming_url(url)
+#        image = Image.open(file_path)
 # MISSION ----------------------------WEBCAM INCLUSION-------------------####
 
 st.write("""
