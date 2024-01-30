@@ -1,4 +1,4 @@
-e# importing the libraries and dependencies needed for creating the UI and supporting the deep learning models used in the project
+# importing the libraries and dependencies needed for creating the UI and supporting the deep learning models used in the project
 import streamlit as st  
 import tensorflow as tf
 import random
@@ -42,19 +42,11 @@ hide_streamlit_style = """
 """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 
-class_names = [
-        'Apple__Apple_scab', 'Apple__Black_rot', 'Apple__Cedar_apple_rust', 'Apple__healthy',
-        'Corn_(maize)__Common_rust_', 'Corn_(maize)___Northern_Leaf_Blight', 'Corn_(maize)___healthy',
-        'Grape___Black_rot', 'Grape___Leaf_blight_(Isariopsis_Leaf_Spot)', 'Grape___healthy',
-        'Potato___Early_blight', 'Potato___Late_blight', 'Potato___healthy',
-        'Strawberry__Leaf_scorch', 'Strawberry__healthy',
-        'Tomato__Early_blight', 'Tomato__Late_blight', 'Tomato__Tomato_mosaic_virus', 'Tomato__healthy']
-
 def prediction_cls(prediction): 
-    for idx, clss in enumerate(class_names): 
-        if np.argmax(prediction)==idx: 
+    for key, clss in class_names.items(): 
+        if np.argmax(prediction)==clss: 
             
-            return idx
+            return key
 
 def load_model():
     model=tf.keras.models.load_model('trial3.h5')
@@ -178,16 +170,105 @@ else:
         'Tomato__Early_blight', 'Tomato__Late_blight', 'Tomato__Tomato_mosaic_virus', 'Tomato__healthy']
 
         string = "Detected Disease : " + class_names[np.argmax(predictions)]
-        detected_class_index = prediction_cls(predictions)
-
-        if detected_class_index in [3, 6, 9, 12, 15, 18]:  # These indices correspond to healthy classes
+        if class_names[np.argmax(predictions)] == 'Tomato__healthy':
             st.balloons()
-            st.success(f"Congratulations! You've detected a healthy {class_names[detected_class_index]} leaf.")
-        else:
-            st.sidebar.warning(f"Detected Disease: {class_names[detected_class_index]}")
-            st.markdown("## Remedy")
-            st.info(f"Remedy for {class_names[detected_class_index]}")
+            #st.sidebar.success(string)
+            st.success("Congratulations! You've detected a healthy Tomato leaf.")
+
+        elif class_names[np.argmax(predictions)] == 'Strawberry__healthy':
+            st.balloons()
+            #st.sidebar.success(string)
+            st.success("Congratulations! You've detected a healthy Strawberry leaf.")
             
+
+        elif class_names[np.argmax(predictions)] == 'Potato__healthy':
+            st.balloons()
+            #st.sidebar.success(string)
+            st.success("Congratulations! You've detected a healthy Potato leaf.")
+
+        elif class_names[np.argmax(predictions)] == 'Grape__healthy':
+            st.balloons()
+            #st.sidebar.success(string)
+            st.success("Congratulations! You've detected a healthy Grape leaf.")
+
+        elif class_names[np.argmax(predictions)] == 'Corn(maize)__healthy':
+            st.balloons()
+            #st.sidebar.success(string)
+            st.success("Congratulations! You've detected a healthy Corn leaf.")
+
+        elif class_names[np.argmax(predictions)] == 'Apple__healthy':
+            st.balloons()
+            #st.sidebar.success(string)
+            st.success("Congratulations! You've detected a healthy Apple leaf.")
+
+        
+    ######################################################----/DISEASED LEAVES/-----##############################################
+
+        elif class_names[np.argmax(predictions)] == 'Tomato__Tomato_mosaic_virus':
+            st.sidebar.warning(string)
+            st.markdown("## Remedy")
+            st.info("Tomato Mosaic Virus")
+
+        elif class_names[np.argmax(predictions)] == 'Tomato__Late_blight':
+            st.sidebar.warning(string)
+            st.markdown("## Remedy")
+            st.info("Tomato Late Blight")
+
+        elif class_names[np.argmax(predictions)] == 'Tomato__Early_blight':
+            st.sidebar.warning(string)
+            st.markdown("## Remedy")
+            st.info("Tomato Early Blight")
+
+        elif class_names[np.argmax(predictions)] == 'Strawberry__Leaf_scorch':
+            st.sidebar.warning(string)
+            st.markdown("## Remedy")
+            st.info("Strawberry Leaf Scorch")
+
+        elif class_names[np.argmax(predictions)] == 'Potato__Late_blight':
+            st.sidebar.warning(string)
+            st.markdown("## Remedy")
+            st.info("Potato Late Blight")
+
+        elif class_names[np.argmax(predictions)] == 'Potato__Early_blight':
+            st.sidebar.warning(string)
+            st.markdown("## Remedy")
+            st.info("Potato Early Blight")
+
+        elif class_names[np.argmax(predictions)] == 'Grape__Leaf_blight_(Isariopsis_Leaf_Spot)':
+            st.sidebar.warning(string)
+            st.markdown("## Remedy")
+            st.info("Grape Leaf Blight_(Isariopsis_Leaf_Spot)")
+
+        elif class_names[np.argmax(predictions)] == 'Grape__Black_rot':
+            st.sidebar.warning(string)
+            st.markdown("## Remedy")
+            st.info("Grape Black Rot")
+
+        elif class_names[np.argmax(predictions)] == 'Corn_(maize)__Common_rust_':
+            st.sidebar.warning(string)
+            st.markdown("## Remedy")
+            st.info("Corn Common Rust")
+
+
+        elif class_names[np.argmax(predictions)] == 'Corn_(maize)__Northern_Leaf_Blight':
+            st.sidebar.warning(string)
+            st.markdown("## Remedy")
+            st.info("Corn Northern Leaf Blight")
+
+        elif class_names[np.argmax(predictions)] == 'Apple__Black_rot':
+            st.sidebar.warning(string)
+            st.markdown("## Remedy")
+            st.info("Apple Black Rot")
+
+        elif class_names[np.argmax(predictions)] == 'Apple__Apple_scab':
+            st.sidebar.warning(string)
+            st.markdown("## Remedy")
+            st.info("Apple Scab")
+
+        elif class_names[np.argmax(predictions)] == 'Apple__Cedar_apple_rust':
+            st.sidebar.warning(string)
+            st.markdown("## Remedy")
+            st.info("Apple Cedar Apple Rust")
         
     else:
         image = Image.open(file)
@@ -206,12 +287,101 @@ else:
         'Tomato__Early_blight', 'Tomato__Late_blight', 'Tomato__Tomato_mosaic_virus', 'Tomato__healthy']
 
         string = "Detected Disease : " + class_names[np.argmax(predictions)]
-        detected_class_index = prediction_cls(predictions)
-
-        if detected_class_index in [3, 6, 9, 12, 15, 18]:  # These indices correspond to healthy classes
+        if class_names[np.argmax(predictions)] == 'Tomato__healthy':
             st.balloons()
-            st.success(f"Congratulations! You've detected a healthy {class_names[detected_class_index]} leaf.")
-        else:
-            st.sidebar.warning(f"Detected Disease: {class_names[detected_class_index]}")
+            #st.sidebar.success(string)
+            st.success("Congratulations! You've detected a healthy Tomato leaf.")
+
+        elif class_names[np.argmax(predictions)] == 'Strawberry__healthy':
+            st.balloons()
+            #st.sidebar.success(string)
+            st.success("Congratulations! You've detected a healthy Strawberry leaf.")
+            
+
+        elif class_names[np.argmax(predictions)] == 'Potato__healthy':
+            st.balloons()
+            #st.sidebar.success(string)
+            st.success("Congratulations! You've detected a healthy Potato leaf.")
+
+        elif class_names[np.argmax(predictions)] == 'Grape__healthy':
+            st.balloons()
+            #st.sidebar.success(string)
+            st.success("Congratulations! You've detected a healthy Grape leaf.")
+
+        elif class_names[np.argmax(predictions)] == 'Corn(maize)__healthy':
+            st.balloons()
+            #st.sidebar.success(string)
+            st.success("Congratulations! You've detected a healthy Corn leaf.")
+
+        elif class_names[np.argmax(predictions)] == 'Apple__healthy':
+            st.balloons()
+            #st.sidebar.success(string)
+            st.success("Congratulations! You've detected a healthy Apple leaf.")
+    ######################################################----/DISEASED LEAVES/-----##############################################
+        elif class_names[np.argmax(predictions)] == 'Tomato__Tomato_mosaic_virus':
+            st.sidebar.warning(string)
             st.markdown("## Remedy")
-            st.info(f"Remedy for {class_names[detected_class_index]}")
+            st.info("Tomato Mosaic Virus")
+
+        elif class_names[np.argmax(predictions)] == 'Tomato__Late_blight':
+            st.sidebar.warning(string)
+            st.markdown("## Remedy")
+            st.info("Tomato Late Blight")
+
+        elif class_names[np.argmax(predictions)] == 'Tomato__Early_blight':
+            st.sidebar.warning(string)
+            st.markdown("## Remedy")
+            st.info("Tomato Early Blight")
+
+        elif class_names[np.argmax(predictions)] == 'Strawberry__Leaf_scorch':
+            st.sidebar.warning(string)
+            st.markdown("## Remedy")
+            st.info("Strawberry Leaf Scorch")
+
+        elif class_names[np.argmax(predictions)] == 'Potato__Late_blight':
+            st.sidebar.warning(string)
+            st.markdown("## Remedy")
+            st.info("Potato Late Blight")
+
+        elif class_names[np.argmax(predictions)] == 'Potato__Early_blight':
+            st.sidebar.warning(string)
+            st.markdown("## Remedy")
+            st.info("Potato Early Blight")
+
+        elif class_names[np.argmax(predictions)] == 'Grape__Leaf_blight_(Isariopsis_Leaf_Spot)':
+            st.sidebar.warning(string)
+            st.markdown("## Remedy")
+            st.info("Grape Leaf Blight_(Isariopsis_Leaf_Spot)")
+
+        elif class_names[np.argmax(predictions)] == 'Grape__Black_rot':
+            st.sidebar.warning(string)
+            st.markdown("## Remedy")
+            st.info("Grape Black Rot")
+
+        elif class_names[np.argmax(predictions)] == 'Corn_(maize)__Common_rust_':
+            st.sidebar.warning(string)
+            st.markdown("## Remedy")
+            st.info("Corn Common Rust")
+
+
+        elif class_names[np.argmax(predictions)] == 'Corn_(maize)__Northern_Leaf_Blight':
+            st.sidebar.warning(string)
+            st.markdown("## Remedy")
+            st.info("Corn Northern Leaf Blight")
+
+        elif class_names[np.argmax(predictions)] == 'Apple__Black_rot':
+            st.sidebar.warning(string)
+            st.markdown("## Remedy")
+            st.info("Apple Black Rot")
+
+        elif class_names[np.argmax(predictions)] == 'Apple__Apple_scab':
+            st.sidebar.warning(string)
+            st.markdown("## Remedy")
+            st.info("Apple Scab")
+
+        elif class_names[np.argmax(predictions)] == 'Apple__Cedar_apple_rust':
+            st.sidebar.warning(string)
+            st.markdown("## Remedy")
+            st.info("Apple Cedar Apple Rust")
+
+
