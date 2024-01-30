@@ -297,7 +297,6 @@ else:
             st.info("Tomato Mosaic Virus")
 
         elif class_names[np.argmax(predictions)] == 'Tomato__Late_blight':
-            st.sidebar.warning(string)
             st.markdown("## Remedy")
             st.info("Tomato Late Blight")
 
