@@ -206,17 +206,17 @@ else:
 
         elif class_names[np.argmax(predictions)] == 'Tomato__Tomato_mosaic_virus':
             st.sidebar.warning(string)
-            st.markdown("## Remedy")
+            st.write('Tomato__Tomato_mosaic_virus')
             st.info("Tomato Mosaic Virus")
 
         elif class_names[np.argmax(predictions)] == 'Tomato__Late_blight':
             st.sidebar.warning(string)
-            st.markdown("## Remedy")
+            st.write('Tomato__Late_blight')
             st.info("Tomato Late Blight")
 
         elif class_names[np.argmax(predictions)] == 'Tomato__Early_blight':
             st.sidebar.warning(string)
-            st.markdown("## Remedy")
+            st.write('Tomato__Early_blight')
             st.info("Tomato Early Blight")
 
         elif class_names[np.argmax(predictions)] == 'Strawberry__Leaf_scorch':
@@ -226,48 +226,48 @@ else:
 
         elif class_names[np.argmax(predictions)] == 'Potato__Late_blight':
             st.sidebar.warning(string)
-            st.markdown("## Remedy")
+            st.write('Potato__Late_blight')
             st.info("Potato Late Blight")
 
         elif class_names[np.argmax(predictions)] == 'Potato__Early_blight':
             st.sidebar.warning(string)
-            st.markdown("## Remedy")
+            st.write('Potato__Late_blight')
             st.info("Potato Early Blight")
 
         elif class_names[np.argmax(predictions)] == 'Grape__Leaf_blight_(Isariopsis_Leaf_Spot)':
             st.sidebar.warning(string)
-            st.markdown("## Remedy")
+            st.write('Potato__Late_blight')
             st.info("Grape Leaf Blight_(Isariopsis_Leaf_Spot)")
 
         elif class_names[np.argmax(predictions)] == 'Grape__Black_rot':
             st.sidebar.warning(string)
-            st.markdown("## Remedy")
+            st.write('Potato__Late_blight')
             st.info("Grape Black Rot")
 
         elif class_names[np.argmax(predictions)] == 'Corn_(maize)__Common_rust_':
             st.sidebar.warning(string)
-            st.markdown("## Remedy")
+            st.write('Potato__Late_blight')
             st.info("Corn Common Rust")
 
 
         elif class_names[np.argmax(predictions)] == 'Corn_(maize)__Northern_Leaf_Blight':
             st.sidebar.warning(string)
-            st.markdown("## Remedy")
+            st.write('Potato__Late_blight')
             st.info("Corn Northern Leaf Blight")
 
         elif class_names[np.argmax(predictions)] == 'Apple__Black_rot':
             st.sidebar.warning(string)
-            st.markdown("## Remedy")
+            st.write('Potato__Late_blight')
             st.info("Apple Black Rot")
 
         elif class_names[np.argmax(predictions)] == 'Apple__Apple_scab':
             st.sidebar.warning(string)
-            st.markdown("## Remedy")
+            st.write('Potato__Late_blight')
             st.info("Apple Scab")
 
         elif class_names[np.argmax(predictions)] == 'Apple__Cedar_apple_rust':
             st.sidebar.warning(string)
-            st.markdown("## Remedy")
+            st.write('Potato__Late_blight')
             st.info("Apple Cedar Apple Rust")
         
     else:
