@@ -1,4 +1,4 @@
-# importing the libraries and dependencies needed for creating the UI and supporting the deep learning models used in the project
+e# importing the libraries and dependencies needed for creating the UI and supporting the deep learning models used in the project
 import streamlit as st  
 import tensorflow as tf
 import random
@@ -42,8 +42,16 @@ hide_streamlit_style = """
 """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 
+class_names = [
+        'Apple__Apple_scab', 'Apple__Black_rot', 'Apple__Cedar_apple_rust', 'Apple__healthy',
+        'Corn_(maize)__Common_rust_', 'Corn_(maize)___Northern_Leaf_Blight', 'Corn_(maize)___healthy',
+        'Grape___Black_rot', 'Grape___Leaf_blight_(Isariopsis_Leaf_Spot)', 'Grape___healthy',
+        'Potato___Early_blight', 'Potato___Late_blight', 'Potato___healthy',
+        'Strawberry__Leaf_scorch', 'Strawberry__healthy',
+        'Tomato__Early_blight', 'Tomato__Late_blight', 'Tomato__Tomato_mosaic_virus', 'Tomato__healthy']
+
 def prediction_cls(prediction): 
-    for idx, clss in class_names.items(): 
+    for idx, clss in enumerate(class_names): 
         if np.argmax(prediction)==idx: 
             
             return idx
